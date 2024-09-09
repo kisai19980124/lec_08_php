@@ -3,25 +3,14 @@
 
 
 ## 課題内容
-- phpのPOST送信機能を使ったアンケートを作成した．
-- write.phpページにてアンケート回答を送信すれば，write_confirm.phpページに飛び，データは/data/result.csvに保存される．
-- read.phpページでは，phpで前述のcsvファイルを読み込み，データ整形をし，Google ChartやChart.jsのAPIでグラフとして可視化する．
+- 前回の課題で作ったページを流用し，SQLの機能を実装した．
+- 元がcsvでデータの受け渡しをしていたが，SQLでできた．
 
 ## DEMO
-https://gsacademy-ki.sakura.ne.jp/lec_07_php/write.php (アンケート記入ページ)
-https://gsacademy-ki.sakura.ne.jp/lec_07_php/read.php (アンケート結果閲覧ページ)
+https://gsacademy-ki.sakura.ne.jp/lec_08_php/write.php (アンケート記入ページ)
 
-↓ページ右上にあるボタンで切替可能
-
-![image](https://github.com/user-attachments/assets/71198247-939c-4ed3-8332-bdd5d238b2de)
-
-
-## 工夫した点・こだわった点
-- 前回の課題同様，予めデザインを決めた上で作成し，部分流用しながら新しいパーツを自作した．
-- zipcloudという郵便番号のAPIを使い，郵便番号を7桁入力すると住所が自動入力される機能を実装した．
-- アンケート結果閲覧ページでは，データを整形し，郵便番号から地図のヒートマップ(Google Chart機能)を閲覧できるようにした．
+https://gsacademy-ki.sakura.ne.jp/lec_08_php/read.php (アンケート結果閲覧ページ)
 
 ## 難しかった点・次回トライしたいこと(又は機能)
-- 市町村マップを表示させたかったけど難しそうだった．
-- 閲覧ページのロードが遅く，なにかローディング画面かPlaceholderが必要かも．
-- アンケートの設問・タイプなどをデータとして保存すれば，一ページ一ページで作る必要がなくなり，APIみたいにデータだけ渡せば簡単に作れるようにできそう．
+- データの列が多いと$stmtにbindValueする際の文も増えるので，何か簡便化する方法を探りたい．
+- アンケート項目を変更する際にSQL文も一緒に変更しないといけないのでそこ含めて自動化できる方法ないか探りたい．
